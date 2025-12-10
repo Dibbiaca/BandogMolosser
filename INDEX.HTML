@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIBBIACA HIGH PERFORMANCE CANE CORSO & BANDOG KENNELS LLC</title>
+
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #0d0d0d;
+            color: #e6e6e6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            letter-spacing: 1.5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background: #000;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #5a1e76;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            color: #d4af37;
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        nav a {
+            color: #e6e6e6;
+            margin-left: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://via.placeholder.com/1600x600?text=Elite+Working+Dogs') center/cover no-repeat;
+            padding: 180px 20px;
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 18px black;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            color: #d4af37;
+        }
+
+        .sub-slogan {
+            margin-top: 15px;
+            color: #c7b9d6;
+            font-size: 18px;
+        }
+
+        button {
+            margin-top: 20px;
+            background: #5a1e76;
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #d4af37;
+            color: #000;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #1a1a1a;
+            border: 2px solid #556b2f;
+            padding: 20px;
+            border-radius: 10px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            border-color: #d4af37;
+            transform: translateY(-4px);
+        }
+
+        /* Contact Form */
+        form {
+            display: grid;
+            gap: 15px;
+            max-width: 500px;
+            margin: auto;
+            margin-top: 25px;
+        }
+
+        input, textarea {
+            background: #222;
+            border: 1px solid #5a1e76;
+            padding: 12px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        textarea {
+            height: 130px;
+        }
+
+        .center {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .advanced-text {
+            color: #c7b9d6;
+        }
+
+        /* Table Styling */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #d4af37;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #5a1e76;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #1a1a1a;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #222;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 20px;
+            text-align: center;
+            border-top: 3px solid #556b2f;
+            color: #aaa;
+        }
+
+        /* Floating Reserve Button */
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 4px 15px rgba(212, 175, 55, 0.6); }
+            50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.9); }
+            100% { transform: scale(1); box-shadow: 0 4px 15px rgba(212, 175, 55, 0.6); }
+        }
+
+        .floating-reserve {
+            opacity: 0;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #d4af37;
+            color: #000;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            z-index: 1000;
+            animation: pulse 2.5s infinite;
+            transition: opacity 1.5s ease-in-out, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .floating-reserve.show { opacity: 1; }
+
+        .floating-reserve:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.9);
+        }
+
+        /* Temperament Cards */
+        #temperament .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        #temperament .card {
+            background: #1a1a1a;
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        #temperament .card:hover {
+            border-color: #fff;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.8);
+            transform: translateY(-5px);
+        }
+
+        #temperament .card h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        #temperament .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #temperament .card ul li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+            color: #e6e6e6;
+        }
+    </style>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.addEventListener('load', () => {
+            const reserveButton = document.querySelector('.floating-reserve');
+            reserveButton.classList.add('show');
+        });
+    </script>
+</head>
+
+<body>
+
+<header>
+    <h1>DIBBIACA KENNELS</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#breeds">Breeds</a>
+        <a href="#breed-comparison">Comparison</a>
+        <a href="#temperament">Temperament</a>
+        <a href="#services">Services</a>
+        <a href="#advanced-training">Advanced Training</a>
+        <a href="#customer-training">Customer Training</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h2>Forged in Service, Perfected in Training</h2>
+    <p class="sub-slogan">Courage-Built. Purpose-Trained. Veteran Owned.</p>
+    <button onclick="scrollToSection('contact')">Reserve or Inquire</button>
+</section>
+
+<section id="about">
+    <h2>About DIBBIACA KENNELS</h2>
+    <p>
+        Located in Chicago, IL, <strong>DIBBIACA HIGH PERFORMANCE CANE CORSO & BANDOG KENNELS LLC</strong> is a veteran-owned kennel with a <strong>family legacy of over 40 years</strong> in breeding and training elite dogs. Our team also brings experience from law enforcement and service work, ensuring reliable, well-trained companions.
+    </p>
+</section>
+
+<section id="breeds">
+    <h2>Our Breeds</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Cane Corso</h3>
+            <p>Calm, confident, loyal Italian guardians. Excellent family protectors, obedient, emotionally attached to handlers. Ideal for service work and emotional support.</p>
+        </div>
+        <div class="card">
+            <h3>Bandog</h3>
+            <p>High-drive working breed highly capable of protection, hunting, and guarding against all threats. Athletic, muscular, intelligent, and highly trainable, forming strong bonds with family and handlers.</p>
+        </div>
+    </div>
+</section>
+
+<section id="breed-comparison">
+    <h2>Breed Comparison: Cane Corso vs Bandog</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Trait</th>
+                <th>Cane Corso</th>
+                <th>Bandog</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Appearance</td>
+                <td>Large, muscular, elegant</td>
+                <td>Larger, robust, built for protection</td>
+            </tr>
+            <tr>
+                <td>Weight & Size</td>
+                <td>90–140+ lbs</td>
+                <td>120–160+ lbs</td>
+            </tr>
+            <tr>
+                <td>Temperament</td>
+                <td>Calm, unwavering loyalty, intelligent, eager to please family</td>
+                <td>High-drive, intense, protective, can be highly independent depending on training</td>
+            </tr>
+            <tr>
+                <td>Protection Instinct</td>
+                <td>Controlled, reliable, Fierce</td>
+                <td>Strong instinct, requires experienced handler, Livestock Guardian, moderate to high Prey Drive depending on individual dog</td>
+            </tr>
+            <tr>
+                <td>Training Requirements</td>
+                <td>Moderate</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>Family Compatibility</td>
+                <td>Excellent with children</td>
+                <td>Bonded but, supervision required around individuals outside of immediate household family</td>
+            </tr>
+            <tr>
+                <td>Special Capabilities</td>
+                <td>Home protection, service, obedience</td>
+                <td>Extreme protection, hunting, emotional support</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="temperament">
+    <h2>Breed Temperament Comparison</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Cane Corso</h3>
+            <ul>
+                <li><strong>Protective:</strong> High, but controlled</li>
+                <li><strong>Loyal:</strong> Extremely bonded to family</li>
+                <li><strong>Intelligence:</strong> Quick learner, obedient</li>
+                <li><strong>Energy:</strong> Moderate</li>
+                <li><strong>Trainability:</strong> Responds well to consistent training</li>
+                <li><strong>Socialization:</strong> Friendly with family, cautious with strangers</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Bandog</h3>
+            <ul>
+                <li><strong>Protective:</strong> Very high, strong instinct</li>
+                <li><strong>Loyal:</strong> Deeply bonded to handlers</li>
+                <li><strong>Intelligence:</strong> Smart, independent thinker</li>
+                <li><strong>Energy:</strong> Very high</li>
+                <li><strong>Trainability:</strong> Requires experienced handler</li>
+                <li><strong>Socialization:</strong> Needs early exposure and supervision</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Training & Services</h2>
+    <div class="grid">
+        <div class="card"><h3>Puppy Sales</h3><p>Healthy, genetically sound pups from proven bloodlines.</p></div>
+        <div class="card"><h3>Protection Training</h3><p>Personal/family protection, controlled aggression, threat discernment.</p></div>
+        <div class="card"><h3>Service Animal Training</h3><p>Task-trained dogs for veterans, mobility assistance, and mental health support.</p></div>
+        <div class="card"><h3>Basic Obedience</h3><p>Foundational manners, leash work, and confidence building.</p></div>
+    </div>
+</section>
+
+<section id="advanced-training">
+    <h2>Advanced Protection & Detection Training</h2>
+    <ul class="advanced-text">
+        <li>Guarding complete strangers in multiple environments</li>
+        <li>Single out threats in crowded areas with precision</li>
+        <li>Sniff and identify guns, explosives, drugs, electronics including USB drives</li>
+        <li>Advanced obedience under extreme stress and distractions</li>
+        <li>Protecting family and property without hesitation, stopping only on command</li>
+        <li>Multi-purpose operational skills for personal and professional protection</li>
+    </ul>
+</section>
+
+<section id="customer-training">
+    <h2>Training Your Dog, Anywhere in the USA</h2>
+    <div class="grid">
+        <div class="card"><h3>Personalized Training</h3><p>Tailored programs for your dog’s breed, temperament, and your family's or business needs.</p></div>
+        <div class="card"><h3>Pick-Up & Drop-Off Nationwide</h3><p>Safe transport anywhere in the U.S. before and after training.</p></div>
+        <div class="card"><h3>Advanced Skills</h3><p>Obedience, protection, service tasks, and specialized commands.</p></div>
+        <div class="card"><h3>Peace of Mind</h3><p>Your dog’s safety, comfort, and performance prioritized at every step.</p></div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p class="center">
+        <strong>Email:</strong> Dibbiacapowerhouse@gmail.com<br>
+        <strong>Phone:</strong> (773) 733-2256<br>
+        <strong>Location:</strong> Chicago, IL<br>
+        <strong>Facebook:</strong> @Dibbiaca Molossus
+    </p>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Message or Puppy Inquiry" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2017 DIBBIACA HIGH PERFORMANCE CANE CORSO & BANDOG KENNELS LLC</p>
+</footer>
+
+<!-- Floating Reserve Button -->
+<a href="#contact" class="floating-reserve" onclick="scrollToSection('contact')">Reserve Now</a>
+
+</body>
+</html>
+<H1>live server</H1>
